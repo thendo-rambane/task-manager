@@ -1,0 +1,6 @@
+[submodule "task-manager-frontend"]
+	path = task-manager-frontend
+	url = git@github.com:thendo-rambs/task-manager-frontend.git
+[submodule "task-manager-api"]
+	path = task-manager-api
+	url = git@github.com:thendo-rambs/task-manager-api.git
