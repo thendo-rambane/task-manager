@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app
+      - /app/target
+    depends_on:
+      - redis
+    env_file:
+      - .env
+
+  redis:
+    image: "redis"
+
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+      
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8000:8080
